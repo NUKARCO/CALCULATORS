@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>NUKAR Advantage Revenue Forecast</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Archivo:wght@400;500;600&display=swap">
+<style>
+/* Layout: brand band on top, inputs panel beside a bold charcoal revenue board; stacks on phones */
+:root{
+  --red:#c90d00; --red-deep:#9e0a00; --red-soft:#fbe9e7;
+  --ink:#16181b; --steel:#5d6168; --line:#e2e3e5;
+  --bg:#f4f4f5; --panel:#ffffff; --board:#16181b; --board-fg:#ffffff; --board-mute:#a9adb3;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --red:#e3261a; --red-deep:#c90d00; --red-soft:#3a1412;
+  --ink:#eeeff1; --steel:#a2a6ad; --line:#2c2f34;
+  --bg:#0e0f11; --panel:#17191c; --board:#000000; --board-fg:#ffffff; --board-mute:#9a9ea5; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --red:#e3261a; --red-deep:#c90d00; --red-soft:#3a1412;
+  --ink:#eeeff1; --steel:#a2a6ad; --line:#2c2f34;
+  --bg:#0e0f11; --panel:#17191c; --board:#000000; --board-fg:#ffffff; --board-mute:#9a9ea5; color-scheme:dark}
+
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+.band{background:var(--red);color:#fff}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band .wrap{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 20px;padding-block:18px}
+.logo{font-family:var(--display);font-weight:800;font-size:30px;letter-spacing:.04em;line-height:1}
+.logo span{font-weight:500;letter-spacing:.18em;font-size:18px;margin-left:8px;opacity:.9}
+.band small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.9}
+.stripe{height:6px;background:repeating-linear-gradient(90deg,var(--ink) 0 28px,transparent 28px 36px);opacity:.9}
+
+main.wrap{padding-block:28px 40px;display:grid;gap:20px;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:start}
+@media (max-width:820px){main.wrap{grid-template-columns:1fr}}
+h1{grid-column:1/-1;font-family:var(--display);font-weight:700;font-size:clamp(28px,5vw,40px);line-height:1.05;margin:0;text-transform:uppercase;letter-spacing:.01em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--red)}
+.lede{grid-column:1/-1;margin:-8px 0 4px;color:var(--steel);max-width:62ch}
+
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:22px;display:grid;gap:26px}
+.field{display:grid;gap:10px}
+.lab{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+label,.lab-t{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
+.val{font-family:var(--display);font-weight:700;font-size:30px;line-height:1;font-variant-numeric:tabular-nums}
+
+.stepper{display:grid;grid-template-columns:52px 1fr 52px;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.stepper button{background:var(--bg);border:0;color:var(--ink);font-size:24px;font-weight:600;cursor:pointer}
+.stepper button:hover{background:var(--red);color:#fff}
+.stepper input{border:0;border-inline:1px solid var(--line);text-align:center;font-family:var(--display);font-weight:700;font-size:28px;padding:8px 0;background:var(--panel);color:var(--ink);width:100%;min-width:0;-moz-appearance:textfield}
+.stepper input::-webkit-inner-spin-button{-webkit-appearance:none}
+
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:10px;border-radius:5px;background:linear-gradient(90deg,var(--red) 0 var(--p,50%),var(--line) var(--p,50%) 100%);outline:none;cursor:pointer;margin:6px 0}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;background:var(--panel);border:4px solid var(--red);box-shadow:0 2px 6px rgba(0,0,0,.25)}
+input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--panel);border:4px solid var(--red)}
+.ticks{display:flex;justify-content:space-between;font-size:12px;color:var(--steel);font-variant-numeric:tabular-nums}
+
+select{appearance:none;-webkit-appearance:none;width:100%;font-family:var(--body);font-size:17px;font-weight:600;color:var(--ink);background:var(--panel) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23c90d00' stroke-width='2.5' fill='none'/%3E%3C/svg%3E") no-repeat right 16px center;border:1px solid var(--line);border-radius:6px;padding:14px 44px 14px 14px;cursor:pointer}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+
+.board{background:var(--board);color:var(--board-fg);border-radius:6px;padding:26px 24px;display:grid;gap:22px;border-top:6px solid var(--red)}
+.board .lab-t{color:var(--board-mute)}
+.hero-num{font-family:var(--display);font-weight:800;font-size:clamp(56px,12vw,104px);line-height:.9;font-variant-numeric:tabular-nums;letter-spacing:-.01em;word-break:break-all}
+.hero-num .cur{color:var(--red);margin-right:2px}
+.formula{color:var(--board-mute);font-size:14px;font-variant-numeric:tabular-nums}
+.formula b{color:var(--board-fg);font-weight:600}
+.split{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid #33363b}
+@media (max-width:460px){.split{grid-template-columns:1fr}}
+.split div{padding:16px 12px 0 0;display:grid;gap:4px}
+.split div+div{padding-left:14px;border-left:1px solid #33363b}
+@media (max-width:460px){.split div+div{border-left:0;padding-left:0;border-top:1px solid #33363b}}
+.split strong{font-family:var(--display);font-weight:700;font-size:28px;line-height:1;font-variant-numeric:tabular-nums}
+.bars{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;align-items:end;height:70px}
+.bars i{display:block;background:var(--red);border-radius:2px 2px 0 0;transition:height .3s}
+.bars i:last-child{background:var(--board-fg)}
+.months{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;font-size:10px;color:var(--board-mute);text-align:center;margin-top:-16px}
+.note{grid-column:1/-1;font-size:13px;color:var(--steel);margin:0}
+@media (prefers-reduced-motion:reduce){.bars i{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="band">
+  <div class="wrap">
+    <div class="logo">NUKAR<span>ADVANTAGE</span></div>
+    <small>Fleet Rental &amp; Leasing · Murrieta, CA</small>
+  </div>
+  <div class="stripe" aria-hidden="true"></div>
+</header>
+
+<main class="wrap">
+  <h1>Fleet revenue <em>forecast</em></h1>
+  <p class="lede">Set your rentable inventory and the weekly rent per car, then choose how often drivers pay. Every period is counted in 7-day weeks, so the yearly projection always covers 52 weeks.</p>
+
+  <section class="panel" aria-label="Forecast inputs">
+    <div class="field">
+      <div class="lab"><label for="cars">Cars in rental inventory</label></div>
+      <div class="stepper">
+        <button type="button" id="minus" aria-label="Remove one car">−</button>
+        <input id="cars" type="number" inputmode="numeric" min="0" max="999" value="10">
+        <button type="button" id="plus" aria-label="Add one car">+</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="lab"><label for="rent">Weekly rent fee per car (7 days)</label><span class="val" id="rentOut">$350</span></div>
+      <input id="rent" type="range" min="0" max="2000" step="10" value="350">
+      <div class="ticks"><span>$0</span><span>$500</span><span>$1,000</span><span>$1,500</span><span>$2,000</span></div>
+    </div>
+
+    <div class="field">
+      <label for="period">Payment period</label>
+      <select id="period">
+        <option value="1">Weekly · 7 days · 52 payments / yr</option>
+        <option value="2">Biweekly · 14 days · 26 payments / yr</option>
+        <option value="4">Monthly · 28 days · 13 payments / yr</option>
+      </select>
+    </div>
+  </section>
+
+  <section class="board" aria-live="polite">
+    <div>
+      <div class="lab-t">Projected yearly revenue</div>
+      <div class="hero-num" id="yearly"><span class="cur">$</span>182,000</div>
+    </div>
+    <div class="formula" id="formula"></div>
+    <div class="split">
+      <div><span class="lab-t" id="perLabel">Per week</span><strong id="perPeriod">$3,500</strong></div>
+      <div><span class="lab-t">Avg per month</span><strong id="monthly">$15,167</strong></div>
+      <div><span class="lab-t">Per car / yr</span><strong id="perCar">$18,200</strong></div>
+    </div>
+    <div>
+      <div class="lab-t" style="margin-bottom:10px">Cumulative revenue by month</div>
+      <div class="bars" id="bars" aria-hidden="true"></div>
+    </div>
+    <div class="months" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
+  </section>
+
+  <p class="note">Projection assumes every car is rented and paid for every period of the year. Before expenses, insurance, and downtime.</p>
+</main>
+
+<script>
+(function(){
+  const $=id=>document.getElementById(id);
+  const cars=$('cars'),rent=$('rent'),period=$('period');
+  const fmt=n=>'$'+Math.round(n).toLocaleString('en-US');
+  const names={1:'Per week (7 days)',2:'Per 2 weeks (14 days)',4:'Per month (28 days)'};
+  const bars=$('bars');
+  for(let i=0;i<12;i++)bars.appendChild(document.createElement('i'));
+
+  function clampCars(){let v=parseInt(cars.value,10);if(isNaN(v)||v<0)v=0;if(v>999)v=999;return v}
+  function update(){
+    const n=clampCars(),r=+rent.value,w=+period.value;
+    const perPeriod=n*r*w, yearly=n*r*52;
+    rent.style.setProperty('--p',(r/2000*100)+'%');
+    $('rentOut').textContent=fmt(r);
+    $('yearly').innerHTML='<span class="cur">$</span>'+Math.round(yearly).toLocaleString('en-US');
+    $('perLabel').textContent=names[w];
+    $('perPeriod').textContent=fmt(perPeriod);
+    $('monthly').textContent=fmt(yearly/12);
+    $('perCar').textContent=fmt(r*52);
+    $('formula').innerHTML='<b>'+n+'</b> car'+(n===1?'':'s')+' × <b>'+fmt(r)+'</b> per week × <b>52</b> weeks a year';
+    [...bars.children].forEach((b,i)=>{b.style.height=(yearly?((i+1)/12*100):2)+'%'});
+    try{localStorage.setItem('nukar-rev2',JSON.stringify({n,r,w}))}catch(e){}
+  }
+  $('minus').onclick=()=>{cars.value=Math.max(0,clampCars()-1);update()};
+  $('plus').onclick=()=>{cars.value=Math.min(999,clampCars()+1);update()};
+  cars.addEventListener('input',update);
+  cars.addEventListener('blur',()=>{cars.value=clampCars();update()});
+  rent.addEventListener('input',update);
+  period.addEventListener('change',update);
+  try{const s=JSON.parse(localStorage.getItem('nukar-rev2')||'null');if(s){cars.value=s.n;rent.value=s.r;period.value=String(s.w)}}catch(e){}
+  update();
+})();
+</script>
+</body>
+</html>

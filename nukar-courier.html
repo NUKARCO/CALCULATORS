@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>NUKAR Courier Revenue Forecast</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Archivo:wght@400;500;600&display=swap">
+<style>
+/* Layout: brand band; job cards (left) stacked; sticky charcoal total board (right); stacks on phones */
+:root{
+  --red:#c90d00; --red-deep:#9e0a00; --red-soft:#fbe9e7;
+  --ink:#16181b; --steel:#5d6168; --line:#e2e3e5;
+  --bg:#f4f4f5; --panel:#ffffff; --field:#f7f7f8; --board:#16181b; --board-fg:#ffffff; --board-mute:#a9adb3; --board-line:#33363b;
+  --s1:#c90d00; --s2:#ffffff; --s3:#8a8e95; --s4:#ff6b5e; --s5:#4a4d53; --s6:#e8c4c0;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --red:#e3261a; --red-deep:#c90d00; --red-soft:#3a1412;
+  --ink:#eeeff1; --steel:#a2a6ad; --line:#2c2f34;
+  --bg:#0e0f11; --panel:#17191c; --field:#1f2226; --board:#000000; --board-fg:#ffffff; --board-mute:#9a9ea5; --board-line:#2a2d31; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --red:#e3261a; --red-deep:#c90d00; --red-soft:#3a1412;
+  --ink:#eeeff1; --steel:#a2a6ad; --line:#2c2f34;
+  --bg:#0e0f11; --panel:#17191c; --field:#1f2226; --board:#000000; --board-fg:#ffffff; --board-mute:#9a9ea5; --board-line:#2a2d31; color-scheme:dark}
+
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+.band{background:var(--red);color:#fff}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band .wrap{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 20px;padding-block:18px}
+.logo{font-family:var(--display);font-weight:800;font-size:30px;letter-spacing:.04em;line-height:1}
+.logo span{font-weight:500;letter-spacing:.18em;font-size:18px;margin-left:8px;opacity:.9}
+.band small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.9}
+.stripe{height:6px;background:repeating-linear-gradient(90deg,var(--ink) 0 28px,transparent 28px 36px);opacity:.9}
+
+.intro{padding-block:28px 6px;display:grid;gap:8px}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,5vw,40px);line-height:1.05;margin:0;text-transform:uppercase;letter-spacing:.01em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--red)}
+.lede{margin:0;color:var(--steel);max-width:66ch}
+
+main.wrap{padding-block:18px 40px;display:grid;gap:20px;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);align-items:start}
+@media (max-width:880px){main.wrap{grid-template-columns:1fr}}
+.jobs{display:grid;gap:16px;min-width:0}
+
+.lab{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
+.job{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:18px;display:grid;gap:16px;min-width:0}
+.job-top{display:flex;gap:10px;align-items:center}
+.swatch{width:12px;height:12px;border-radius:2px;flex:none;outline:1px solid var(--line)}
+.job-name{flex:1;min-width:0;font-family:var(--display);font-weight:700;font-size:24px;border:0;border-bottom:2px solid transparent;background:transparent;color:var(--ink);padding:2px 0;text-transform:uppercase;letter-spacing:.01em}
+.job-name:hover,.job-name:focus{border-bottom-color:var(--red);outline:none}
+.remove{background:none;border:1px solid var(--line);color:var(--steel);border-radius:4px;padding:6px 10px;font:600 12px var(--body);letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.remove:hover{border-color:var(--red);color:var(--red)}
+
+.seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.seg button{border:0;background:var(--field);color:var(--steel);font:600 13px var(--body);padding:10px 6px;cursor:pointer;line-height:1.25}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--red);color:#fff}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.f{display:grid;gap:6px;min-width:0}
+.f label{font-size:12px;font-weight:600;color:var(--steel);letter-spacing:.04em}
+.inp{display:flex;align-items:center;border:1px solid var(--line);border-radius:6px;background:var(--field);overflow:hidden}
+.inp:focus-within{border-color:var(--red);box-shadow:0 0 0 2px var(--red-soft)}
+.inp span{padding:0 0 0 12px;color:var(--steel);font-weight:600}
+.inp input{flex:1;min-width:0;border:0;background:transparent;color:var(--ink);font-family:var(--display);font-weight:700;font-size:22px;padding:8px 12px 8px 6px;font-variant-numeric:tabular-nums;-moz-appearance:textfield}
+.inp input::-webkit-inner-spin-button{-webkit-appearance:none}
+.inp em{font-style:normal;padding-right:12px;color:var(--steel);font-size:12px;white-space:nowrap}
+.group{display:grid;gap:10px;padding-top:4px}
+.group h3{margin:0;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+
+.job-foot{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px}
+.job-foot select{appearance:none;-webkit-appearance:none;font:600 14px var(--body);color:var(--ink);background:var(--field) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c90d00' stroke-width='2.2' fill='none'/%3E%3C/svg%3E") no-repeat right 10px center;border:1px solid var(--line);border-radius:6px;padding:8px 32px 8px 10px;cursor:pointer}
+.payout{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.payout strong{font-family:var(--display);font-weight:700;font-size:28px;line-height:1;font-variant-numeric:tabular-nums}
+.payout small{color:var(--steel);font-size:13px}
+
+.add{border:2px dashed var(--line);background:transparent;color:var(--ink);border-radius:6px;padding:16px;font:700 18px var(--display);letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.add:hover{border-color:var(--red);color:var(--red)}
+.settings{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:16px 18px;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between}
+.settings .inp{width:130px}
+
+button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+
+.board{background:var(--board);color:var(--board-fg);border-radius:6px;padding:24px;display:grid;gap:20px;border-top:6px solid var(--red);position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px)}
+@media (max-width:880px){.board{position:static}}
+.board .lab{color:var(--board-mute)}
+.hero-num{font-family:var(--display);font-weight:800;font-size:clamp(52px,9vw,92px);line-height:.9;font-variant-numeric:tabular-nums;word-break:break-all}
+.hero-num .cur{color:var(--red);margin-right:2px}
+.sub{color:var(--board-mute);font-size:14px}
+.split{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--board-line)}
+.split div{padding:14px 10px 0 0;display:grid;gap:4px;min-width:0}
+.split div+div{padding-left:12px;border-left:1px solid var(--board-line)}
+@media (max-width:420px){.split{grid-template-columns:1fr}.split div+div{border-left:0;padding-left:0;border-top:1px solid var(--board-line)}}
+.split strong{font-family:var(--display);font-weight:700;font-size:28px;line-height:1;font-variant-numeric:tabular-nums}
+.stack{display:flex;height:14px;border-radius:3px;overflow:hidden;background:var(--board-line)}
+.stack i{display:block;height:100%;transition:width .3s}
+.legend{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.legend li{display:grid;grid-template-columns:12px minmax(0,1fr) auto auto;gap:10px;align-items:center;font-size:14px}
+.legend li b{width:12px;height:12px;border-radius:2px}
+.legend li span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.legend li em{font-style:normal;color:var(--board-mute);font-variant-numeric:tabular-nums;font-size:12px}
+.legend li strong{font-variant-numeric:tabular-nums;font-weight:600}
+.note{font-size:13px;color:var(--steel);margin:0}
+.reset{background:none;border:0;color:var(--steel);text-decoration:underline;font:inherit;font-size:13px;cursor:pointer;padding:0}
+@media (prefers-reduced-motion:reduce){.stack i{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="band">
+  <div class="wrap">
+    <div class="logo">NUKAR<span>ADVANTAGE</span></div>
+    <small>Courier &amp; Delivery · 1099 Earnings</small>
+  </div>
+  <div class="stripe" aria-hidden="true"></div>
+</header>
+
+<div class="wrap intro">
+  <h1>Courier revenue <em>forecast</em></h1>
+  <p class="lede">Add each 1099 job you are applying for and pick how it pays: a day rate plus mileage, a per-trip rate plus per-package pay, or a mix of all four. The board adds every job together into weekly, biweekly, monthly and yearly totals.</p>
+</div>
+
+<main class="wrap">
+  <div class="jobs">
+    <div class="settings">
+      <span class="lab">Weeks worked per year</span>
+      <div class="inp"><input id="weeks" type="number" min="1" max="52" step="1" value="52" aria-label="Weeks worked per year"><em>weeks</em></div>
+    </div>
+    <div id="jobList" class="jobs"></div>
+    <button type="button" class="add" id="addJob">+ Add another job</button>
+    <p class="note">The first two jobs are sample figures to show how it works. Rename them and type over the numbers with the offers you receive. <button type="button" class="reset" id="reset">Restore samples</button></p>
+  </div>
+
+  <aside class="board" aria-live="polite">
+    <div>
+      <div class="lab">Projected yearly revenue · all jobs</div>
+      <div class="hero-num" id="yearly"><span class="cur">$</span>0</div>
+    </div>
+    <div class="sub" id="sub"></div>
+    <div class="split">
+      <div><span class="lab">Weekly</span><strong id="wk">$0</strong></div>
+      <div><span class="lab">Biweekly</span><strong id="bw">$0</strong></div>
+      <div><span class="lab">Monthly</span><strong id="mo">$0</strong></div>
+    </div>
+    <div style="display:grid;gap:12px">
+      <span class="lab">Share by job (yearly)</span>
+      <div class="stack" id="stack"></div>
+      <ul class="legend" id="legend"></ul>
+    </div>
+  </aside>
+</main>
+
+<div class="wrap" style="padding-block:0 32px">
+  <p class="note">Gross 1099 revenue before vehicle costs, fuel, insurance and self-employment tax. Monthly figures average a year of weeks over 12 months; biweekly is two weeks of pay.</p>
+</div>
+
+<template id="tpl">
+  <article class="job">
+    <div class="job-top">
+      <b class="swatch"></b>
+      <input class="job-name" data-k="name" aria-label="Job name">
+      <button type="button" class="remove">Remove</button>
+    </div>
+    <div class="seg" role="group" aria-label="How this job pays">
+      <button type="button" data-mode="day">Day rate + mileage</button>
+      <button type="button" data-mode="trip">Per trip + per package</button>
+      <button type="button" data-mode="mix">Mix of all four</button>
+    </div>
+    <div class="group g-day">
+      <h3>Day rate &amp; mileage</h3>
+      <div class="grid">
+        <div class="f"><label>Price per day</label><div class="inp"><span>$</span><input type="number" min="0" step="1" data-k="dayRate"><em>/ day</em></div></div>
+        <div class="f"><label>Miles driven per day</label><div class="inp"><input type="number" min="0" step="1" data-k="miles"><em>mi / day</em></div></div>
+        <div class="f"><label>Mileage pay per mile</label><div class="inp"><span>$</span><input type="number" min="0" step="0.01" data-k="perMile"><em>/ mi</em></div></div>
+      </div>
+    </div>
+    <div class="group g-trip">
+      <h3>Trips &amp; packages</h3>
+      <div class="grid">
+        <div class="f"><label>Price per trip</label><div class="inp"><span>$</span><input type="number" min="0" step="0.5" data-k="tripRate"><em>/ trip</em></div></div>
+        <div class="f"><label>Trips per day</label><div class="inp"><input type="number" min="0" step="1" data-k="trips"><em>trips</em></div></div>
+        <div class="f"><label>Price per package</label><div class="inp"><span>$</span><input type="number" min="0" step="0.05" data-k="pkgRate"><em>/ pkg</em></div></div>
+        <div class="f"><label>Packages per day</label><div class="inp"><input type="number" min="0" step="1" data-k="pkgs"><em>pkgs</em></div></div>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="f"><label>Days worked per week</label><div class="inp"><input type="number" min="0" max="7" step="1" data-k="days"><em>days / wk</em></div></div>
+    </div>
+    <div class="job-foot">
+      <div class="payout">
+        <select data-k="period" aria-label="This job pays">
+          <option value="1">Paid weekly</option>
+          <option value="2">Paid biweekly</option>
+          <option value="m">Paid monthly</option>
+        </select>
+        <strong class="out-pay">$0</strong><small class="out-pay-l">per payout</small>
+      </div>
+      <small class="out-yr" style="color:var(--steel)"></small>
+    </div>
+  </article>
+</template>
+
+<script>
+(function(){
+  const $=id=>document.getElementById(id);
+  const fmt=n=>'$'+Math.round(n).toLocaleString('en-US');
+  const COLORS=['--s1','--s2','--s3','--s4','--s5','--s6'];
+  const SAMPLES=()=>[
+    {name:'Sample: Route courier',mode:'day',dayRate:180,miles:120,perMile:0.5,tripRate:0,trips:0,pkgRate:0,pkgs:0,days:5,period:'1'},
+    {name:'Sample: Package delivery',mode:'trip',dayRate:0,miles:0,perMile:0,tripRate:6,trips:8,pkgRate:1.25,pkgs:60,days:3,period:'2'}
+  ];
+  let jobs, weeks=52;
+  try{const s=JSON.parse(localStorage.getItem('nukar-courier')||'null');if(s&&Array.isArray(s.jobs)){jobs=s.jobs;weeks=s.weeks||52}}catch(e){}
+  if(!jobs||!jobs.length)jobs=SAMPLES();
+  $('weeks').value=weeks;
+
+  const num=v=>{v=parseFloat(v);return isFinite(v)&&v>0?v:0};
+  function weekly(j){
+    const d=Math.min(7,num(j.days));
+    const useDay=j.mode!=='trip', useTrip=j.mode!=='day';
+    let perDay=0;
+    if(useDay)perDay+=num(j.dayRate)+num(j.miles)*num(j.perMile);
+    if(useTrip)perDay+=num(j.tripRate)*num(j.trips)+num(j.pkgRate)*num(j.pkgs);
+    return perDay*d;
+  }
+  function payout(j,w){return j.period==='m'?w*weeks/12:w*(+j.period)}
+
+  const list=$('jobList'), tpl=$('tpl');
+  function render(){
+    list.innerHTML='';
+    jobs.forEach((j,i)=>{
+      const el=tpl.content.firstElementChild.cloneNode(true);
+      el.querySelector('.swatch').style.background='var('+COLORS[i%COLORS.length]+')';
+      el.querySelectorAll('[data-k]').forEach(inp=>{
+        inp.value=j[inp.dataset.k]??'';
+        inp.id='j'+i+'-'+inp.dataset.k;
+        const lab=inp.closest('.f')?.querySelector('label'); if(lab)lab.htmlFor=inp.id;
+        inp.addEventListener(inp.tagName==='SELECT'?'change':'input',()=>{j[inp.dataset.k]=inp.value;update()});
+      });
+      el.querySelectorAll('.seg button').forEach(b=>b.addEventListener('click',()=>{j.mode=b.dataset.mode;applyMode(el,j);update()}));
+      el.querySelector('.remove').addEventListener('click',()=>{jobs.splice(i,1);render()});
+      el.querySelector('.remove').hidden=jobs.length<2;
+      applyMode(el,j);
+      list.appendChild(el);
+    });
+    update();
+  }
+  function applyMode(el,j){
+    el.querySelectorAll('.seg button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===j.mode)));
+    el.querySelector('.g-day').hidden=j.mode==='trip';
+    el.querySelector('.g-trip').hidden=j.mode==='day';
+  }
+  function update(){
+    weeks=Math.min(52,Math.max(1,Math.round(num($('weeks').value))||52));
+    let totalW=0;
+    const rows=jobs.map((j,i)=>{const w=weekly(j);totalW+=w;return{j,w,i}});
+    const cards=list.children;
+    rows.forEach(({j,w,i})=>{
+      const c=cards[i]; if(!c)return;
+      c.querySelector('.out-pay').textContent=fmt(payout(j,w));
+      c.querySelector('.out-pay-l').textContent=j.period==='m'?'per month':j.period==='2'?'every 2 weeks':'per week';
+      c.querySelector('.out-yr').textContent=fmt(w)+' / wk · '+fmt(w*weeks)+' / yr';
+    });
+    const yearly=totalW*weeks;
+    $('yearly').innerHTML='<span class="cur">$</span>'+Math.round(yearly).toLocaleString('en-US');
+    $('wk').textContent=fmt(totalW);
+    $('bw').textContent=fmt(totalW*2);
+    $('mo').textContent=fmt(yearly/12);
+    $('sub').textContent=jobs.length+' job'+(jobs.length===1?'':'s')+' combined × '+weeks+' weeks worked a year';
+    const stack=$('stack'),legend=$('legend');stack.innerHTML='';legend.innerHTML='';
+    rows.forEach(({j,w,i})=>{
+      const color='var('+COLORS[i%COLORS.length]+')';
+      const pct=totalW?w/totalW*100:0;
+      const seg=document.createElement('i');seg.style.width=pct+'%';seg.style.background=color;stack.appendChild(seg);
+      const li=document.createElement('li');
+      li.innerHTML='<b></b><span></span><em></em><strong></strong>';
+      li.querySelector('b').style.background=color;
+      li.querySelector('span').textContent=j.name||'Untitled job';
+      li.querySelector('em').textContent=Math.round(pct)+'%';
+      li.querySelector('strong').textContent=fmt(w*weeks);
+      legend.appendChild(li);
+    });
+    try{localStorage.setItem('nukar-courier',JSON.stringify({jobs,weeks}))}catch(e){}
+  }
+  $('weeks').addEventListener('input',update);
+  $('addJob').addEventListener('click',()=>{
+    jobs.push({name:'Job '+(jobs.length+1),mode:'day',dayRate:0,miles:0,perMile:0,tripRate:0,trips:0,pkgRate:0,pkgs:0,days:5,period:'1'});
+    render();
+    const last=list.lastElementChild; last.querySelector('.job-name').focus(); last.querySelector('.job-name').select();
+  });
+  $('reset').addEventListener('click',()=>{jobs=SAMPLES();$('weeks').value=52;render()});
+  render();
+})();
+</script>
+</body>
+</html>
