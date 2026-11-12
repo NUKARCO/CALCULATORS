@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NUKAR Advantage Calculators</title>
+<meta name="description" content="Fleet rental and courier revenue forecast calculators from NUKAR Advantage.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Archivo:wght@400;500;600&display=swap">
+<style>
+:root{
+  --red:#c90d00; --ink:#16181b; --steel:#5d6168; --line:#e2e3e5;
+  --bg:#f4f4f5; --panel:#ffffff; --board:#16181b; --board-fg:#ffffff; --board-mute:#a9adb3;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root{
+  --red:#e3261a; --ink:#eeeff1; --steel:#a2a6ad; --line:#2c2f34;
+  --bg:#0e0f11; --panel:#17191c; --board:#000000; --board-mute:#9a9ea5; color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+.band{background:var(--red);color:#fff}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band .wrap{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 20px;padding-block:18px}
+.logo{font-family:var(--display);font-weight:800;font-size:30px;letter-spacing:.04em;line-height:1}
+.logo span{font-weight:500;letter-spacing:.18em;font-size:18px;margin-left:8px;opacity:.9}
+.band small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.9}
+.stripe{height:6px;background:repeating-linear-gradient(90deg,var(--ink) 0 28px,transparent 28px 36px);opacity:.9}
+main.wrap{padding-block:36px 48px;display:grid;gap:24px}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(32px,6vw,52px);line-height:1;margin:0;text-transform:uppercase;text-wrap:balance}
+h1 em{font-style:normal;color:var(--red)}
+.lede{margin:0;color:var(--steel);max-width:60ch}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+a.card{display:grid;gap:14px;align-content:start;text-decoration:none;color:var(--board-fg);background:var(--board);border-top:6px solid var(--red);border-radius:6px;padding:26px 24px;transition:transform .15s}
+a.card:hover{transform:translateY(-3px)}
+a.card:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.tag{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--board-mute)}
+.card h2{font-family:var(--display);font-weight:800;font-size:38px;line-height:.95;margin:0;text-transform:uppercase}
+.card p{margin:0;color:var(--board-mute)}
+.go{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:.06em;text-transform:uppercase;color:var(--red)}
+footer.wrap{padding-block:0 32px;color:var(--steel);font-size:13px}
+@media (prefers-reduced-motion:reduce){a.card{transition:none}}
+</style>
+</head>
+<body>
+<header class="band">
+  <div class="wrap">
+    <div class="logo">NUKAR<span>ADVANTAGE</span></div>
+    <small>Fleet Rental &amp; Leasing · Murrieta, CA</small>
+  </div>
+  <div class="stripe" aria-hidden="true"></div>
+</header>
+
+<main class="wrap">
+  <h1>Revenue <em>calculators</em></h1>
+  <p class="lede">Forecast fleet rental income and courier earnings. Choose a calculator to get started.</p>
+  <div class="cards">
+    <a class="card" href="nukar-revenue.html">
+      <span class="tag">For fleet owners</span>
+      <h2>Fleet Revenue Forecast</h2>
+      <p>Cars in inventory × weekly rent fee, with weekly, biweekly and monthly payment periods and a yearly projection.</p>
+      <span class="go">Open calculator →</span>
+    </a>
+    <a class="card" href="nukar-courier.html">
+      <span class="tag">For 1099 drivers</span>
+      <h2>Courier Revenue Forecast</h2>
+      <p>Combine multiple gig jobs paid by day rate, mileage, trip or package into one weekly, monthly and yearly total.</p>
+      <span class="go">Open calculator →</span>
+    </a>
+  </div>
+</main>
+
+<footer class="wrap">NUKAR Co · 38372 Innovation Ct #103, Murrieta, CA 92563 · (951) 638-3785</footer>
+</body>
+</html>
